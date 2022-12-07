@@ -1,0 +1,59 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: 'Oxygen', sans-serif;
+}
+
+table.sortable th:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sorttable_nosort:hover  {
+    text-decoration: none !important;
+    cursor: default !important;
+}
+
+.thumb {
+    height: 100px;
+}
+
+.navbar-dark {
+    background-color: #0097A7;
+}
+
+a {
+    color: #00BCD4;
+}
+
+a:hover {
+    color: #B2EBF2;
+}
+
+.btn-primary, .badge-primary {
+    background-color:#9E9E9E; 
+}
+
+.btn-primary:hover {
+    background-color: #757575;
+}
+
+.footer {
+    background-color: #FFFFFF;
+}
