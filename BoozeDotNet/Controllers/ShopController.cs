@@ -240,5 +240,18 @@ namespace BoozeDotNet.Controllers
             // redirect to Order Confirmation
             return RedirectToAction("Details", "Orders", new { @id = order.OrderId });
         }
+
+
+        public IActionResult UpdateCart(int CartItemId, int Quantity) {
+            CartItem item = _context.CartItems.Find(CartItemId);
+            if (item != null) {
+                item.Quantity = Quantity;
+                _context.SaveChanges();
+                return View("Cart");
+	    } else {
+                return View("404");
+	    }
+
+	}
     }
 }

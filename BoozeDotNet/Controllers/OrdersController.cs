@@ -86,5 +86,16 @@ namespace BoozeDotNet.Controllers
         {
           return _context.Orders.Any(e => e.OrderId == id);
         }
+
+        [Authorize(Roles = "Administrator")]
+        public IActionResult SalesReport()
+        {
+            decimal orders = _context.Orders.Count();
+            ViewData["orders"] = orders;
+            decimal revenue = _context.Orders.Sum(rev => rev.OrderTotal);
+            ViewData["revenue"] = revenue;
+
+            return View("SalesReport");
+        }
     }
 }

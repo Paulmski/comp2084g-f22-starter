@@ -44,5 +44,34 @@ namespace BoozeDotNetTests
 
             controller = new ProductsController(context);
         }
+
+        #region "Delete"
+        [TestMethod]
+        public void DeleteProduct()
+        {
+
+
+            // Act
+            ViewResult result = (ViewResult)controller.Delete(65).Result;
+
+            // Assert
+            Assert.AreEqual("delete", result.ViewName);
+
+
+
+        }
+
+
+        [TestMethod]
+        public void DeleteConfirmed() {
+            // Act
+             controller.DeleteConfirmed(65);
+            Task.Delay(100);
+            //Assert
+            Assert.AreEqual(null, context.Product.Find(65));
+
+	}
+        #endregion
     }
 }
+

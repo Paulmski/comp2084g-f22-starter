@@ -1,0 +1,13 @@
+@page
+@model IEnumerable<BoozeDotNet.Models.Order>
+@{
+    ViewData["Title"] = "SalesReport";
+}
+
+<h1>SalesReport</h1>
+
+
+<p>This would be where it calls the function in made in OrdersController called sales report to display orders and revenue</p>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

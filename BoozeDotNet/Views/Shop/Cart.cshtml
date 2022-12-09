@@ -29,7 +29,9 @@
         <tr>
             <td>
                 @if (item.Product.Photo != null) {
+                        <a href="~/img/products/@item.Product.Photo">
                     <img src="~/img/products/@item.Product.Photo" alt="@item.Product.Name Image" class="thumb" />
+			</a>
                 }
                 else {
                     <img src="~/img/products/placeholder.gif" alt="@item.Product.Name" />
@@ -39,7 +41,12 @@
                 @Html.DisplayFor(modelItem => item.Product.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
+
+
+
+                <input type="number" id="quantity" name="quantity"
+                       min="1" max="100">
+                <a asp-action="UpdateCart" asp-route-id="@item.CartItemId">Update</a> |
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
